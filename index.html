@@ -70,7 +70,9 @@
       margin: 32px auto 0;
     }
 
-    .games button {
+    .games a {
+      display: grid;
+      place-items: center;
       min-height: 52px;
       border: 0;
       border-radius: 12px;
@@ -79,13 +81,14 @@
       font: inherit;
       font-weight: 700;
       cursor: pointer;
+      text-decoration: none;
     }
 
-    .games button:nth-child(2) {
+    .games a:nth-child(2) {
       background: #e3744d;
     }
 
-    .games button:focus-visible {
+    .games a:focus-visible {
       outline: 3px solid #536158;
       outline-offset: 3px;
     }
@@ -113,8 +116,8 @@
     <h1>Hello Seowoo</h1>
     <p>오늘도 반가워요.</p>
     <div class="games" aria-label="게임 선택">
-      <button type="button">game1</button>
-      <button type="button">game2</button>
+      <a href="Jump_BlockWorld_6_0_10_Worlds.html">점프</a>
+      <a href="hanja_touch_adventure_mobile.html">한자</a>
     </div>
   </main>
 </body>
