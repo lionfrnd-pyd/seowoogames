@@ -73,10 +73,12 @@
       margin: 32px auto 0;
     }
 
-    .games a {
+    .games a,
+    .games button {
       display: grid;
       place-items: center;
       min-height: 52px;
+      padding: 0 12px;
       border: 0;
       border-radius: 12px;
       background: #202b25;
@@ -87,11 +89,17 @@
       text-decoration: none;
     }
 
-    .games a:nth-child(2) {
+    .games button { appearance: none; }
+
+    .games a:nth-child(2),
+    .games .add-game {
       background: #e3744d;
     }
 
-    .games a:focus-visible {
+    .games .add-game { grid-column: 1 / -1; }
+
+    .games a:focus-visible,
+    .games button:focus-visible {
       outline: 3px solid #536158;
       outline-offset: 3px;
     }
@@ -121,6 +129,7 @@
     <div class="games" aria-label="게임 선택">
       <a href="Jump_BlockWorld_6_0_10_Worlds.html">점프</a>
       <a href="hanja_touch_adventure_mobile.html">한자</a>
+      <button class="add-game" id="addGame" type="button">게임추가</button>
     </div>
   </main>
   <section class="feedback-panel" data-feedback-panel aria-labelledby="feedbackTitle">

@@ -10,6 +10,11 @@
   const count = panel.querySelector('#feedbackCount');
   const status = panel.querySelector('#feedbackStatus');
   const clearButton = panel.querySelector('#feedbackClear');
+  const addGameButton = document.querySelector('#addGame');
+
+  addGameButton?.addEventListener('click', () => {
+    window.alert('아래에 서우가 추가하고싶은 게임을 설명해서 입력해주세요');
+  });
 
   function readEntries() {
     try {
