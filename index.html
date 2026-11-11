@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f6f3eb">
   <title>Hello Seowoo</title>
+  <link rel="stylesheet" href="feedback.css">
   <style>
     :root {
       color-scheme: light;
@@ -18,8 +19,9 @@
     body {
       min-height: 100svh;
       margin: 0;
-      display: grid;
-      place-items: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       padding: 24px;
       background:
         radial-gradient(ellipse at 12% 18%, #d7edcf 0, transparent 34%),
@@ -29,6 +31,7 @@
 
     main {
       width: min(100%, 560px);
+      margin: auto 0;
       padding: clamp(32px, 9vw, 64px) 24px;
       text-align: center;
       animation: arrive 650ms cubic-bezier(.2,.8,.2,1) both;
@@ -120,5 +123,25 @@
       <a href="hanja_touch_adventure_mobile.html">한자</a>
     </div>
   </main>
+  <section class="feedback-panel" data-feedback-panel aria-labelledby="feedbackTitle">
+    <div class="feedback-heading">
+      <div><h2 id="feedbackTitle">서우의 요청 기록</h2><p>필요한 점을 적어 두면 이 브라우저에서 두 게임의 기록을 함께 볼 수 있어요.</p></div>
+      <span class="feedback-count" id="feedbackCount" aria-label="저장된 요청 수">0</span>
+    </div>
+    <form class="feedback-form" id="feedbackForm">
+      <label class="feedback-label">게임
+        <select class="feedback-control" name="game">
+          <option value="jump" selected>점프</option><option value="hanja">한자</option><option value="both">공통</option>
+        </select>
+      </label>
+      <label class="feedback-label">필요한 기능이나 바꾸고 싶은 점
+        <textarea class="feedback-control feedback-message" name="message" rows="3" maxlength="500" required placeholder="생각난 내용을 여기에 적어줘"></textarea>
+      </label>
+      <div class="feedback-form-footer"><span class="feedback-status" id="feedbackStatus" role="status" aria-live="polite">이 기록은 이 브라우저에만 저장돼요.</span><button class="feedback-submit" type="submit">기록하기</button></div>
+    </form>
+    <div class="feedback-history-heading"><h3>요청 히스토리</h3><button class="feedback-clear" id="feedbackClear" type="button">전체 삭제</button></div>
+    <ol class="feedback-list" id="feedbackList" aria-live="polite"></ol>
+  </section>
+  <script src="feedback.js"></script>
 </body>
 </html>
