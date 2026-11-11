@@ -78,8 +78,8 @@
     event.preventDefault();
     const formData = new FormData(form);
     const text = formData.get('message').trim();
-    const game = formData.get('game');
-    if (!text || !Object.prototype.hasOwnProperty.call(labels, game)) return;
+    const game = 'both';
+    if (!text) return;
 
     const previousEntries = entries;
     entries = [{ game, text, createdAt: Date.now() }, ...entries].slice(0, maxEntries);
